@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.*?>
+<?import javafx.scene.text.*?>
+<?import java.lang.*?>
+<?import javafx.scene.image.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.shape.*?>
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="960.0" prefWidth="1700.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="GUI.Controller">
+   <children>
+      <Button fx:id="firstImageButton" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#setFirstImage" prefHeight="50.0" prefWidth="150.0" text="Select First Image" />
+      <Button fx:id="secondImageButton" layoutX="10.0" layoutY="70.0" mnemonicParsing="false" onAction="#setSecondImage" prefHeight="50.0" prefWidth="150.0" text="Select Second Image" />
+      <Button fx:id="switchImagesButton" layoutX="10.0" layoutY="130.0" mnemonicParsing="false" onAction="#switchImages" prefHeight="50.0" prefWidth="150.0" text="Switch Images" />
+      <Button fx:id="flipTemplateButton" layoutX="10.0" layoutY="200.0" mnemonicParsing="false" onAction="#flipTemplate" prefHeight="50.0" prefWidth="150.0" text="Flip Template" />
+      <Button fx:id="saveButton" layoutX="10.0" layoutY="270.0" mnemonicParsing="false" prefHeight="50.0" prefWidth="150.0" text="Save" />
+      <ImageView fx:id="mainImageView" fitHeight="940.0" fitWidth="1200.0" layoutX="180.0" layoutY="10.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../../resources/images/placeholder.png" />
+         </image></ImageView>
+      <Line endX="170.0" endY="960.0" startX="170.0" />
+      <Line endX="170.0" layoutY="190.0" />
+      <Line endX="170.0" layoutY="260.0" />
+      <Line endX="170.0" endY="960.0" layoutX="1220.0" startX="170.0" />
+      <Line endX="310.0" layoutX="1390.0" layoutY="380.0" />
+      <Line endX="310.0" layoutX="1390.0" layoutY="430.0" />
+      <Arc fx:id="angleDisplay" fill="#ffffff00" layoutX="1545.0" layoutY="160.0" length="151.8" radiusX="100.0" radiusY="100.0" startAngle="118.2" stroke="BLACK" strokeType="INSIDE" type="ROUND" />
+      <Line fx:id="redLine" endX="150.0" fill="RED" layoutX="1545.0" layoutY="160.0" startX="-150.0" stroke="RED" strokeWidth="3.0" />
+      <Line fx:id="greenLine" endX="150.0" fill="LIME" layoutX="1545.0" layoutY="160.0" startX="-150.0" stroke="LIME" strokeWidth="3.0" />
+      <Pane fx:id="templateImageViewPane" layoutX="635.0" layoutY="480.0">
+         <children>
+            <ImageView fx:id="templateImageView" fitHeight="400.0" fitWidth="500.0" pickOnBounds="true" preserveRatio="true" />
+         </children>
+         <cursor>
+            <Cursor fx:constant="MOVE" />
+         </cursor>
+      </Pane>
+      <Pane fx:id="greenLinePane" layoutX="454.0" layoutY="380.0" prefHeight="500.0" prefWidth="30.0">
+         <children>
+            <Line endY="500.0" layoutX="15.0" stroke="LIME" strokeWidth="2.0" />
+            <Circle fill="LIME" layoutX="15.0" layoutY="250.0" radius="4.0" stroke="TRANSPARENT" strokeType="INSIDE" />
+         </children>
+      </Pane>
+      <Text fx:id="angleDisplayLabel" layoutX="1483.0" layoutY="354.0" strokeType="OUTSIDE" strokeWidth="0.0" text="151.80°" textAlignment="CENTER">
+         <font>
+            <Font size="35.0" />
+         </font>
+      </Text>
+      <TextFlow fx:id="textR" layoutX="1394.0" layoutY="384.0" prefHeight="43.0" prefWidth="150.0" textAlignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="R" textAlignment="CENTER" wrappingWidth="150.0">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Text>
+         </children>
+      </TextFlow>
+      <TextFlow fx:id="textL" layoutX="1545.0" layoutY="384.0" prefHeight="43.0" prefWidth="150.0" textAlignment="CENTER">
+         <children>
+            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="L" textAlignment="CENTER" wrappingWidth="150.0">
+               <font>
+                  <Font size="35.0" />
+               </font>
+            </Text>
+         </children>
+      </TextFlow>
+      <TextField layoutX="1394.0" layoutY="434.0" prefHeight="43.0" prefWidth="300.0" promptText="#">
+         <font>
+            <Font size="19.0" />
+         </font>
+      </TextField>
+   </children>
+</Pane>
