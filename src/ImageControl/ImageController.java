@@ -1,4 +1,4 @@
-package Images;
+package ImageControl;
 
 import javafx.scene.image.Image;
 

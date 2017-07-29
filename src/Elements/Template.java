@@ -4,10 +4,12 @@ import javafx.scene.image.Image;
 
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
+import java.io.IOException;
+import java.net.URL;
 
 public class Template {
 
-    private final String IMG = "resources/images/";
+    private final String IMG = "/images/";
     private final String IMG_FORMAT= ".png";
 
     private Image templateImage;
@@ -28,10 +30,10 @@ public class Template {
 
     private void setTemplateImage(String imageName) {
         try {
-            FileInputStream inputStream = new FileInputStream(IMG + imageName + IMG_FORMAT);
-            this.templateImage = new Image(inputStream);
-        } catch (FileNotFoundException e) {
-            System.err.print(e.getStackTrace());
+            URL url = getClass().getResource(IMG + imageName + IMG_FORMAT);
+            this.templateImage = new Image(url.openStream());
+        } catch (IOException e) {
+            e.printStackTrace();
             System.out.println("Couldn't load image");
         }
     }
